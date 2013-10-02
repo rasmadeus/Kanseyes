@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/manager.png</file>
+        <file>res/about.png</file>
+        <file>res/connect.png</file>
+        <file>res/insert.png</file>
+        <file>res/updateFrequency.png</file>
+        <file>res/icon.ico</file>
+    </qresource>
+</RCC>
