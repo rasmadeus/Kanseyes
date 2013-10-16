@@ -1,6 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 
+#include <QModelIndex>
 #include <QDialog>
 class QwtPlot;
 class Data;

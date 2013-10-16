@@ -19,7 +19,7 @@ public:
     PrivateData()
     {
         for(int i = 0; i < 32; ++i){
-            headers << QObject::tr("Float №%1").arg(i);
+            headers << QObject::tr("Float %1").arg(i);
         }
     }
 };

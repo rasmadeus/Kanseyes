@@ -11,13 +11,14 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = PlotTest
 TEMPLATE = app
 
-include(c:/Dev/Qwt-6.1.0/features/qwt.prf)
+include(c:/Dev/Qwt-6.0.1/features/qwt.prf)
 
 SOURCES += main.cpp \
     ../../src/Plot.cpp \
     ../../src/Model.cpp \
     ../../src/Data.cpp \
     ../../src/Curves.cpp \
+    ../../src/Command.cpp \
     ../../src/PlotCurve.cpp \
     ../../src/View.cpp \
     ../../src/IntDelegate.cpp \
@@ -30,6 +31,7 @@ HEADERS  += \
     ../../src/global.h \
     ../../src/Data.h \
     ../../src/Curves.h \
+    ../../src/Command.h \
     ../../src/Plot.h \
     ../../src/PlotCurve.h \
     ../../src/View.h \

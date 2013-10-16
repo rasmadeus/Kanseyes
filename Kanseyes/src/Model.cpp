@@ -27,6 +27,13 @@ public:
         }
     }
 
+    void setCurveTitle(int i, const QString& title)
+    {
+        if(curves->isY(i)){
+            curves->setTitle(i, title);
+        }
+    }
+
     void setCurvePenWidth(int i, int width)
     {
         if(curves->isY(i)){

@@ -20,24 +20,18 @@ QString ProgController::header(int i) const
     return HeadersModel::getInstance()->getHeader(i - 1);
 }
 
-#include <QDataStream>
-static void fill(float* dst, char* src, int dstSize)
-{
-    const int n  = sizeof(float);
-    for(int i = 0; i < dstSize; ++i){
-        memcpy(dst + i, src + i * n, n);
-    }
-}
-
-void ProgController::parse(QByteArray* samples)
+void ProgController::parse(char* samples, int size)
 {
     int ms = QTime::currentTime().msecsTo(beginTime);
     float relativeTime = - ms * 0.001;
     setSample(0, relativeTime);
 
-    float buf[size()];
-    fill(buf, samples->data(), size());
-    for(int i = 1; i < size(); ++i){
-        setSample(i, buf[i-1]);
+
+    const int n = size < this->size() ? size : this->size();
+    for(int i = 1; i <= n; ++i){
+        float buf;
+        memcpy(&buf, samples + (i - 1) * 4, 4);
+        setSample(i, buf);
     }
+
 }

@@ -14,6 +14,7 @@ public:
     void setSample(int i, float sample);
     void init();
     void clear();
+
     virtual int size() const = 0;
     virtual QString header(int i) const = 0;
 };

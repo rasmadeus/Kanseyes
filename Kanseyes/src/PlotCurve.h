@@ -3,8 +3,10 @@
 
 #include <qwt_plot_curve.h>
 #include "global.h"
+#include "Command.h"
 
-class PlotCurve : public QwtPlotCurve
+
+class PlotCurve : public QwtPlotCurve, public Command
 {
     PRIVATE_DATA
 public:

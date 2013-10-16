@@ -1,5 +1,6 @@
 HEADERS += \
-    global.h
+    global.h \
+    Command.h
 
 SOURCES += \
     Command.cpp

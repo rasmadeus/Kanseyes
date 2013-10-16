@@ -12,7 +12,6 @@ DataUDP::~DataUDP()
     delete receiver;
 }
 
-#include <QThread>
 void DataUDP::bind(quint16 port)
 {
     emit abort();
@@ -33,13 +32,17 @@ void DataUDP::cameNewSamples()
 {
     while(receiver->hasPendingDatagrams()){
         QByteArray samples;
-        samples.resize(receiver->pendingDatagramSize());
+        const quint64 n = receiver->pendingDatagramSize();
+        samples.resize(n);
         QHostAddress host;
         quint16 port;        
         receiver->readDatagram(samples.data(), samples.size(), &host, &port);
         if(host == sender){
-            parse(&samples);
+            parse(samples.data(), n/sizeof(float));
             emit samplesHasChanged();
         }
+
     }
 }
+
+

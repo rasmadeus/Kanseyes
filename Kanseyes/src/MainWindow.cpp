@@ -47,9 +47,7 @@ void MainWindow::timerEvent(QTimerEvent* evt)
     if(evt->timerId() == timer->timerId()){
         plots->updateCurves();
     }
-    else{
-        QMainWindow::timerEvent(evt);
-    }
+    QMainWindow::timerEvent(evt);
 }
 
 void MainWindow::abort()
@@ -76,10 +74,11 @@ void MainWindow::save()
     }
 
     QSettings s(path, QSettings::IniFormat);
+    s.clear();
     s.beginGroup("MainWindow");
+        headers->save(s);
         plots->save(s);
         settings->save(s);
-        headers->save(s);
         s.setValue("geometry", saveGeometry());
         s.setValue("state", saveState());
     s.endGroup();
@@ -98,9 +97,9 @@ void MainWindow::read()
 
     QSettings s(path, QSettings::IniFormat);
     s.beginGroup("MainWindow");
+        headers->read(s);
         plots->read(s);
         settings->read(s);
-        headers->read(s);
         restoreGeometry(s.value("geometry").toByteArray());
         restoreState(s.value("state").toByteArray());
     s.endGroup();

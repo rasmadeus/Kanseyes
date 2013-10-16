@@ -15,7 +15,7 @@ public:
     void bind(quint16 port);
     void setSender(const QHostAddress& sender);
 protected:
-    virtual void parse(QByteArray* samples) = 0;
+    virtual void parse(char* samples, int size) = 0;
     QTime beginTime;
 signals:
     void samplesHasChanged();

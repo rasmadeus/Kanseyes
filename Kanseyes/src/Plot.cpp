@@ -43,19 +43,17 @@ private:
 
     void createCanvas()
     {
-        QwtPlotCanvas* canvas = new QwtPlotCanvas();
-        canvas->setLineWidth(1);
-        canvas->setFrameStyle(QFrame::Box | QFrame::Plain);
-        canvas->setBorderRadius(10);
-        canvas->setPalette(QPalette(Qt::white));
-        plot->setCanvas(canvas);
+        plot->canvas()->setLineWidth(1);
+        plot->canvas()->setFrameStyle(QFrame::Box | QFrame::Plain);
+        plot->canvas()->setBorderRadius(10);
+        plot->canvas()->setPalette(QPalette(Qt::white));
     }
 
     void createGrid()
     {
         QwtPlotGrid* grid = new QwtPlotGrid();
-        grid->setMajorPen(QPen(Qt::gray, 0, Qt::DotLine));
-        grid->setMinorPen(QPen(Qt::gray, 0, Qt::DotLine));
+        grid->setMajPen(QPen(Qt::gray, 0, Qt::DotLine));
+        grid->setMinPen(QPen(Qt::gray, 0, Qt::DotLine));
         grid->attach(plot);
     }
 

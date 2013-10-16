@@ -68,6 +68,7 @@ void Curves::setAbscissIndex(int i)
             d->setAbscissHeader(i);
         }
         d->iX = i;
+        d->setAbscissHeader(i);
     }
 }
 
@@ -78,10 +79,18 @@ void Curves::setOrdinateIndex(int i)
         d->owner->replot();
     }
     else{
+        if(d->curves.isEmpty()){
+            d->setAbscissHeader(d->iX);
+        }
         PlotCurve* curve = new PlotCurve(
             d->data->header(i),
             d->owner
         );
+        QPen pen = curve->pen();
+        pen.setWidth(2);
+
+        curve->setPen(pen);
+
         d->curves[i] = curve;
         emit curveCreated(curve);
     }

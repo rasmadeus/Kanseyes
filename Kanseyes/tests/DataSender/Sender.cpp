@@ -86,7 +86,7 @@ void Sender::send()
     mas[3] = -1;
     mas[4] = 5;
     mas[5] = -5;
-    mas[6] = 12.7;
+    mas[6] = A * qCos(time * f);
     fill(data, mas, 7);
     sender->writeDatagram(data, sizeof(data), QHostAddress::Broadcast, 5000);
 }

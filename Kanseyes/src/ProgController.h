@@ -12,7 +12,7 @@ public:
     int size() const;
     QString header(int i) const;
 protected:
-    void parse(QByteArray* samples);
+    void parse(char* samples, int size);
 };
 
 #endif // PROGCONTROLLER_H

@@ -25,6 +25,7 @@ private slots:
     void timerEvent(QTimerEvent* evt);
     void abort();
     void bound();
+private slots:
     void save();
     void read();
 private:

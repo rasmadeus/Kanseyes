@@ -22,22 +22,14 @@ Data::~Data()
 
 QPointF Data::sample(int iX, int iY)
 {
-    if(!d->mutex.tryLock()){
-        return d->lastPoint;
-    }
     QPointF result(d->samples[iX], d->samples[iY]);
-    d->mutex.unlock();
     d->lastPoint = result;
     return result;
 }
 
 void Data::setSample(int i, float sample)
 {
-    if(!d->mutex.tryLock()){
-        return;
-    }
     d->samples[i] = sample;
-    d->mutex.unlock();
 }
 
 void Data::init()
@@ -48,10 +40,6 @@ void Data::init()
 
 void Data::clear()
 {
-    if(!d->mutex.tryLock()){
-        return;
-    }
     d->samples.clear();
     init();
-    d->mutex.unlock();
 }
