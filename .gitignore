@@ -1,0 +1,29 @@
+# C++ objects and libs
+
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+*.exe
+*.qm
+
+# Qt-es
+
+*.pro.user
+*.pro.user.*
+moc_*.cpp
+qrc_*.cpp
+*.debug
+*.release
+Makefile
+*-build-*
+build-*
+*~
+testData
+*.db
+*.desktop

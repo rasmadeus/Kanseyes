@@ -16,7 +16,7 @@ include($$PWD/Plot.pri)
 include($$PWD/Auxiliary.pri)
 include($$PWD/Receiver.pri)
 include($$PWD/Gui.pri)
-include(c:/Dev/Qwt-6.0.1/features/qwt.prf)
+include(c:\Dev\Qt\Qt5.2.1\Qwt-6.1.0\features\qwt.prf)
 
 SOURCES += main.cpp
 

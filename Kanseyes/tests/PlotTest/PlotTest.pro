@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = PlotTest
 TEMPLATE = app
 
-include(c:/Dev/Qwt-6.0.1/features/qwt.prf)
+include(c:\Dev\Qt\Qt5.2.1\Qwt-6.1.0\features\qwt.prf)
 
 SOURCES += main.cpp \
     ../../src/Plot.cpp \

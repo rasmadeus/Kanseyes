@@ -72,9 +72,25 @@
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_2"/>
   </widget>
+  <widget class="QToolBar" name="dockWindowsManager">
+   <property name="windowTitle">
+    <string>Dock windows manager</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionShow"/>
+   <addaction name="actionShow_headers"/>
+  </widget>
   <action name="actionShow">
    <property name="text">
     <string>Show settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
    </property>
   </action>
   <action name="actionOpen">
@@ -90,6 +106,9 @@
   <action name="actionShow_headers">
    <property name="text">
     <string>Show headers</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+H</string>
    </property>
   </action>
  </widget>
